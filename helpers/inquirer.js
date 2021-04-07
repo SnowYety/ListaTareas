@@ -1,3 +1,4 @@
+require('colors');
 const inquirer = require('inquirer');
 require('colors');
 
@@ -9,41 +10,42 @@ const preguntas = [
         choices:[
             {
                 value:'1',
-                name:`1.-Crear Tarea`
+                name:`${'1.'.magenta.bold}Crear Tarea`
             },
             {
                 value:'2',
-                name:`2.- Listar Tareas`
+                name:`${'2.'.magenta.bold} Listar Tareas`
             },
             {
                 value:'3',
-                name:`3.-Listar Tareas Completas`
+                name:`${'3.'.magenta.bold}Listar Tareas Completas`
             },
             {
                 value:'4',
-                name:`4.-Listar Tareas Pendientes`
+                name:`${'4.'.magenta.bold}Listar Tareas Pendientes`
             },
             {
                 value:'5',
-                name:`5.-Completar Tarea(s)`
+                name:`${'5.'.magenta.bold}Completar Tarea(s)`
             },
             {
                 value:'6',
-                name:`6.-Borrar Tarea`
+                name:`${'6.'.magenta.bold}Borrar Tarea`
             },
             {
                 value:'0',
-                name:`0.-Salir`
+                name:`${'0.'.magenta.bold}Salir`
             }
         ]
     }
 ]
 
+//Funcion para imprimir el menu en consola 
 const inquirerMenu = async() => {
     console.clear();
-    console.log('=================================='.green);
-    console.log('   Seleccione Una Opcion'.green);
-    console.log('==================================\n'.green);
+    console.log('=================================='.white);
+    console.log('   Seleccione Una Opcion'.white);
+    console.log('==================================\n'.white);
 
     const {opciones} = await inquirer.prompt(preguntas);
     return opciones
